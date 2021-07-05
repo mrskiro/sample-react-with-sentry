@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import * as Sentry from "./modules/sentry";
 
+Sentry.init();
 ReactDOM.render(
   <React.StrictMode>
     <App />
