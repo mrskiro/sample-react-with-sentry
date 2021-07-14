@@ -14,9 +14,13 @@ export const fetchCount = ReduxToolkit.createAsyncThunk<
   undefined,
   AsyncThunkConfig
 >("count/fetch", async (_, thunkAPI) => {
-  const res = 200;
-  // return res;
-  return thunkAPI.rejectWithValue(undefined);
+  try {
+    const res = await 200;
+    throw new Error("fetch count error");
+    return res;
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error);
+  }
 });
 
 const slice = ReduxToolkit.createSlice({
