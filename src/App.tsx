@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       hoge
-      {/* <BadComponent /> */}
+      <BadComponent />
     </div>
   );
 }
